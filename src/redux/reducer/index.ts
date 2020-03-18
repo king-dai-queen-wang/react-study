@@ -1,4 +1,4 @@
-import {todosReducer} from "./todos-reducer";
+import {todosReducer} from "./todos/todos-reducer";
 import {combineReducers} from "redux";
 
 export default combineReducers({
