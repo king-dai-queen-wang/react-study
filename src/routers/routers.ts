@@ -2,7 +2,7 @@ import {Home} from "../pages/home/Home";
 import {Test} from "../pages/home/test/Test";
 import {Game} from "../pages/games/components/game/Game";
 import {Clock} from "../pages/clock/Clock";
-import {RouterModel} from "../models";
+import {RouterModel} from "../model";
 import Todos from "../pages/todos/Todos";
 
 export const routers: RouterModel[] = [
