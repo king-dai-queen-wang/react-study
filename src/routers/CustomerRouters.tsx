@@ -1,7 +1,8 @@
 import React from "react";
-import { routers } from './routers';
-import {BrowserRouter as Router,Route, Switch} from 'react-router-dom';
+import {routers} from './routers';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {MenuHeader} from "../components/menu-header/MenuHeader";
+
 export class CustomerRouters extends React.Component{
     generateRoutes() {
         return (

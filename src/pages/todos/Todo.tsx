@@ -1,8 +1,9 @@
 import React from "react";
-import { connect } from 'react-redux'
-import {addTodoAction, fetchUser} from "../../redux/actions/todo/todo-actions";
+import {connect} from 'react-redux'
+import {addTodoAction} from "../../redux/actions/todo/todo-actions";
 import {TodoStateModel} from "../../redux/models/todos";
 import {Dispatch} from "redux";
+import {fetchUser} from "../../redux/actions/user/user-actions";
 
 
 interface Iprop {
@@ -23,7 +24,7 @@ const mapStateToProps = state => {
     return ({
         todos: state.todos
     });
-}
+};
 
 // @ts-ignore
 @connect(

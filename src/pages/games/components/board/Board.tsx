@@ -1,6 +1,7 @@
 import React from "react";
 import {Square} from "../square/Square";
 import './Board.scss';
+
 interface IProps {
     squares: (string | null)[];
     onClick: (param ?: number) => ({} | void);

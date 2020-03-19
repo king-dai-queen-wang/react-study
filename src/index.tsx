@@ -4,21 +4,15 @@ import './index.css';
 import 'antd/dist/antd.css';
 import App from './pages/App';
 import * as serviceWorker from './serviceWorker';
-
 import rootReducer from './redux/reducer'
 
 import {applyMiddleware, compose, createStore} from "redux";
-import { ofType, combineEpics, createEpicMiddleware } from "redux-observable";
 import {Provider} from "react-redux";
-import {fetchUserEpic} from "./redux/actions/todo/todo-actions";
+import {epicMiddleware, rootEpic} from "./redux/actions";
+
 const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const epicMiddleware = createEpicMiddleware();
-const rootEpic = combineEpics(fetchUserEpic);
-
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(epicMiddleware)));
-
 epicMiddleware.run(rootEpic);
-
 ReactDOM.render(
     <Provider store={store}>
         <App />

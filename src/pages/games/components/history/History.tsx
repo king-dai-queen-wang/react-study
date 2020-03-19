@@ -1,5 +1,6 @@
 import React from "react";
 import './History.scss';
+
 interface IProp {
     history: ({squares: (string | null)[]})[];
     onClick: (param: number) => void;

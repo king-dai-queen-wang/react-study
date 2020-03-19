@@ -1,4 +1,13 @@
-import {TodoActionEnum, TodoActionInterface, TodoStateModel} from "../../models/todos";
+import {TodoStateModel} from "../../models/todos";
+import {TodoActionEnum} from "../../enum/todos/todo-action.enum";
+
+export interface TodoActionInterface {
+    id?: any
+    type: any;
+    payload?: any;
+    text?: string;
+    name: string;
+}
 
 export const todos = (state: TodoStateModel[] = [], action: TodoActionInterface) => {
     switch (action.type) {
@@ -18,4 +27,4 @@ export const todos = (state: TodoStateModel[] = [], action: TodoActionInterface)
         }
         default: return state;
     }
-}
+};
