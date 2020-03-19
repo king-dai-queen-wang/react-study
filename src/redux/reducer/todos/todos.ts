@@ -1,6 +1,6 @@
 import {TodoActionEnum, TodoActionInterface, TodoStateModel} from "../../models/todos";
 
-export const todosReducer = (state: TodoStateModel[] = [], action: TodoActionInterface) => {
+export const todos = (state: TodoStateModel[] = [], action: TodoActionInterface) => {
     switch (action.type) {
         case TodoActionEnum.ADD_TODO: {
             return [
