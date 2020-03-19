@@ -7,9 +7,16 @@ import * as serviceWorker from './serviceWorker';
 import rootReducer from './redux/reducer'
 
 import {applyMiddleware, compose, createStore} from "redux";
+import { ofType, combineEpics, createEpicMiddleware } from "redux-observable";
 import {Provider} from "react-redux";
+import {fetchUserEpic} from "./redux/actions/todo/todo-actions";
 const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware()));
+const epicMiddleware = createEpicMiddleware();
+const rootEpic = combineEpics(fetchUserEpic);
+
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(epicMiddleware)));
+
+epicMiddleware.run(rootEpic);
 
 ReactDOM.render(
     <Provider store={store}>
