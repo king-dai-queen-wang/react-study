@@ -1,6 +1,7 @@
-export interface TodoActionInterface {
+import {ActionInterface} from "../action.interface";
+
+export interface TodoActionInterface extends ActionInterface{
     id?: any
-    type: any;
     payload?: any;
     text?: string;
     name: string;
