@@ -1,13 +1,6 @@
-import {TodoStateModel} from "../../models/todos";
 import {TodoActionEnum} from "../../enum/todos/todo-action.enum";
-
-export interface TodoActionInterface {
-    id?: any
-    type: any;
-    payload?: any;
-    text?: string;
-    name: string;
-}
+import {TodoActionInterface} from "../../models/todos/todoAction.interface";
+import {TodoStateModel} from "../../models/todos/todo.model";
 
 export const todos = (state: TodoStateModel[] = [], action: TodoActionInterface) => {
     switch (action.type) {
@@ -23,7 +16,7 @@ export const todos = (state: TodoStateModel[] = [], action: TodoActionInterface)
         }
         case TodoActionEnum.TOGGLE_TODO: {
             return state.map(item => item.id === action.id ?
-                {...item, completed: true } : item)
+                {...item, completed: !item.completed } : item)
         }
         default: return state;
     }

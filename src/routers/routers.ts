@@ -3,8 +3,8 @@ import {Test} from "../pages/home/test/Test";
 import {Game} from "../pages/games/components/game/Game";
 import {Clock} from "../pages/clock/Clock";
 import {RouterModel} from "../model";
-import {Todo} from "../pages/todos/Todo";
 import {Antd} from "../pages/antd/Antd";
+import {TodoList} from "../pages/todoList/TodoList";
 
 export const routers: RouterModel[] = [
     {
@@ -27,9 +27,9 @@ export const routers: RouterModel[] = [
         name: 'clock',
         component: Clock,
     }, {
-        path: '/todo',
-        name: 'todo',
-        component: Todo,
+        path: '/todoList',
+        name: 'todoList',
+        component: TodoList,
     }, {
         path: '/antd',
         name: 'antd',

@@ -7,3 +7,7 @@ export const addTodoAction = (text: string) => ({
     text
 });
 
+export const toggleActiveToDoItem = (id: number) => ({
+    type: TodoActionEnum.TOGGLE_TODO,
+    id,
+});
