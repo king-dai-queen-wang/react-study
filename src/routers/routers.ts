@@ -13,7 +13,7 @@ export const routers: RouterModel[] = [
         component: Home,
         children: [
             {
-                path: 'test',
+                path: '/test',
                 name: 'test',
                 component: Test
             }
@@ -30,6 +30,20 @@ export const routers: RouterModel[] = [
         path: '/todoList',
         name: 'todoList',
         component: TodoList,
+        children: [
+            {
+                path: '/test2',
+                name: 'test2',
+                component: Test,
+                children: [
+                    {
+                        path: '/test3',
+                        name: 'test3',
+                        component: Clock
+                    }
+                ]
+            }
+        ]
     }, {
         path: '/antd',
         name: 'antd',

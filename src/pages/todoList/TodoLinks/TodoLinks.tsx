@@ -27,11 +27,7 @@ const getVisibleTodos = (todos, filter) => {
 // @ts-ignore
 @connect(
     (state: ITodoStates) => ({todos: getVisibleTodos(state.todos, state.visiableFilter)}),
-    (dispatch: Dispatch) => {
-        return ({
-            toggleActiveToDoItem: id => dispatch(toggleActiveToDoItem(id)),
-        });
-    })
+    (dispatch: Dispatch) => ({toggleActiveToDoItem: id => dispatch(toggleActiveToDoItem(id))}))
 export class TodoLinks extends React.Component<any> {
     generateList(param: TodoStateModel[], toggleActiveToDoItem) {
         return (param.map(item =>

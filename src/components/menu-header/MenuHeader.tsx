@@ -4,20 +4,25 @@ import {RouterModel} from "../../model/router-model/router.model";
 import './MenuHeader.scss';
 
 interface IProps {
-    routers: RouterModel[]
+    routers: RouterModel[],
 }
 
 function LinkItem(route: RouterModel) {
-    return <Link className="link" to={route.path} >{route.name}</Link>
+    return (
+        <div className="link">
+            <Link to={route.path} >{route.name}</Link>
+            {route.children && <MenuHeader routers={route.children}/>}
+        </div>
+
+    )
 }
 export class MenuHeader extends React.Component <IProps>{
     render() {
+        const {routers} = this.props;
         return <div className="">
-            {this.props.routers.map((route, index) => {
-                return <LinkItem key={index} {...route}>
-                    </LinkItem>
-
-            })}
+            {routers && routers.map((route, index) =>
+                <LinkItem key={index} {...route}>{route.children}</LinkItem>
+            )}
         </div>;
     }
 }

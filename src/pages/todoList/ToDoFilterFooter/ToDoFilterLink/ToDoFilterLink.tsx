@@ -3,7 +3,7 @@ import {setVisibilityFilter} from "../../../../redux/actions/todo/visiable-actio
 import ToDoLink from "./ToDoLink/ToDoLink";
 
 const mapStateToProps = (state, ownProps: {filter: any}) => ({
-    active: ownProps.filter === state.visibilityFilter
+    active: ownProps.filter === state.visiableFilter
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
